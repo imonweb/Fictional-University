@@ -2,10 +2,10 @@
 
 <?php 
 
-  the_title();
-  get_the_title();
-  the_ID();
-  get_the_ID();
+  // the_title();
+  // get_the_title();
+  // the_ID();
+  // get_the_ID();
 
 ?>
 
