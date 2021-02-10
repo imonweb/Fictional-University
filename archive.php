@@ -32,6 +32,7 @@ get_header(); ?>
 
     echo paginate_links();
   ?>
+ 
 </div>
   
 
