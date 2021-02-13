@@ -74,7 +74,7 @@
           <div class="container">
             <i class="fa fa-search search-overlay__icon" aria-hidden="true"></i>
             <i class="fa fa-window-close search-overlay__close" aria-hidden="true"></i>
-            <input type="text" class="search-term" placeholder="what are you looking for?" id="search-term">
+            <input type="text" class="search-term" placeholder="what are you looking for?" id="search-term" autocomplete="off">
           </div>
       </div>
     </div>
