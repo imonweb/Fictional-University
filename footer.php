@@ -77,6 +77,12 @@
             <input type="text" class="search-term" placeholder="what are you looking for?" id="search-term" autocomplete="off">
           </div>
       </div>
+
+      <div class="container">
+        <div id="search-overlay__results">
+            
+        </div>
+      </div>
     </div>
 <?php wp_footer(); ?>
 </body>
