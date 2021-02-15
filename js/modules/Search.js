@@ -51,19 +51,19 @@ class Search {
     // this.resultsDiv.html("Imagine real search results here...");
     // this.isSpinnerVisible = false;
     // before testArray.map
-     // <li><a href="${posts[0].link}">${posts[0].title.rendered}</a></li>
-    $.getJSON('http://localhost/wp/Fictional-University/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
+    // <li><a href="${posts[0].link}">${posts[0].title.rendered}</a></li>
+    // 'http://localhost/wp/Fictional-University/wp-json/wp/v2/posts?search='
+    
+    $.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
       // alert(posts[0].title.rendered);
       // var testArray = ['red', 'orange', 'yellow'];
       this.resultsDiv.html(`
         <h2 class="search-overlay__section-title">General Information</h2>
-        <ul class="link-list min-list">
-         
-         
+        ${posts.length ? '<ul class="link-list min-list">' : '<p>No general information matches that search'}
           ${posts.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
-        </ul>
-        
+        ${posts.length ? '</ul>' : ''}
       `);
+      this.isSpinnerVisible = false;
        // ${testArray.map(item => `<li>${item}</li>`).join('')}
     });
   }
