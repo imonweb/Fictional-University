@@ -50,8 +50,21 @@ class Search {
   getResults(){
     // this.resultsDiv.html("Imagine real search results here...");
     // this.isSpinnerVisible = false;
-    $.getJSON('http://localhost/wp/Fictional-University/wp-json/wp/v2/posts?search=' + this.searchField.val(), function(posts){
-      alert(posts[0].title.rendered);
+    // before testArray.map
+     // <li><a href="${posts[0].link}">${posts[0].title.rendered}</a></li>
+    $.getJSON('http://localhost/wp/Fictional-University/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
+      // alert(posts[0].title.rendered);
+      // var testArray = ['red', 'orange', 'yellow'];
+      this.resultsDiv.html(`
+        <h2 class="search-overlay__section-title">General Information</h2>
+        <ul class="link-list min-list">
+         
+         
+          ${posts.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
+        </ul>
+        
+      `);
+       // ${testArray.map(item => `<li>${item}</li>`).join('')}
     });
   }
 
