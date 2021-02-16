@@ -10,10 +10,13 @@ function universityRegisterSearch(){
 }
 
 /*  http://localhost/wp/Fictional-University/wp-json/university/v1/search */
-function universitySearchResults(){
+function universitySearchResults($data){
   // return 'Contratulations, you created a route.';
+  // http://localhost/wp/Fictional-University/wp-json/university/v1/search?term=barksalot
+  //'s' => 'barksalot'
   $professors = new WP_Query(array(
-    'post_type' => 'professor'
+    'post_type' => 'professor',
+    's' => sanitize_text_field($data['term'])
   ));
 
   $professorResults = array();
