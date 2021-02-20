@@ -129,6 +129,9 @@
 }
 
 /* Reveal and Hide Fade Transitions */
+/*  Comment out from here if using jQuery. Otherwise, put a comment if using Vanilla JavaScript */
+/*
+
 #my-notes {
   position: relative;
 }
@@ -155,3 +158,4 @@
   right: 0;
   opacity: 0;
 }
+*/
