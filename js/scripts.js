@@ -5,7 +5,7 @@ import MobileMenu from "./modules/MobileMenu"
 import HeroSlider from "./modules/HeroSlider"
 import GoogleMap from "./modules/GoogleMap"
 import Search from "./modules/Search"
-import MyNotes from "./modules/MyNotes"
+import MyNotes from "./modules/MyNotes_jQuery"
 
 
 // Instantiate a new object using our modules/classes
