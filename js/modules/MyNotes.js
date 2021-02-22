@@ -47,6 +47,7 @@ class MyNotes {
     thisNote.data("state","cancel");
   }
 
+  /*  Delete Note */
   deleteNote(e){
     var thisNote = $(e.target).parents("li");
 
@@ -60,6 +61,10 @@ class MyNotes {
         thisNote.slideUp();
         console.log("Congrats");
         console.log(response);
+        // note 
+        if(response.userNoteCount < 5){
+          $(".note-limit-message").removeClass("active");
+        }
       },
       error: (response) => {
 
@@ -129,7 +134,9 @@ class MyNotes {
         console.log(response);
       },
       error: (response) => {
-
+        if(response.responseText == "You have reached your note limit."){
+          $(".note-limit-message").addClass("active");
+        }
         console.log("Sorry");
         console.log(response);
       }
