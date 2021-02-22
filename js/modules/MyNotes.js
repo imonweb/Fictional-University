@@ -102,6 +102,8 @@ class MyNotes {
       'title': $(".new-note-title").val(),
       'content': $(".new-note-body").val(),
       'status': 'publish'
+      // make the post private temp
+      //'status': 'private'
     }
 
     $.ajax({
